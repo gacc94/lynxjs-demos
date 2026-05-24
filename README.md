@@ -11,8 +11,11 @@ lynxjs-demos/
 ├── apps/                 ← proyectos LynxJS (cada uno con su package.json)
 │   ├── demo-uno/
 │   └── demo-dos/
+├── openspec/             ← especificaciones del proyecto (OpenSpec)
+│   ├── specs/            ← especificaciones principales
+│   └── changes/          ← cambios en progreso
 ├── docs/                 ← documentacion de arquitectura
-├── .opencode/
+├── .opencode/            ← config de opencode (commands, skills)
 ├── opencode.json
 └── .gitignore
 ```
@@ -37,6 +40,7 @@ Este proyecto usa skills de [lynx-community/skills](https://skills.sh/lynx-commu
 ## Requisitos
 
 - [Bun](https://bun.sh/) >= 1.2
+- [OpenSpec](https://github.com/Fission-AI/OpenSpec) (desarrollo con especificaciones)
 
 ## Uso
 
@@ -63,3 +67,20 @@ cd apps/<nombre>
 bun init -y
 # Agregar lynx.config.ts y dependencias LynxJS
 ```
+
+## OpenSpec
+
+El proyecto usa [OpenSpec](https://github.com/Fission-AI/OpenSpec) para desarrollo guiado por especificaciones. Esto asegura que cada funcionalidad nueva tenga specs, diseño y tareas antes de implementar.
+
+### Comandos rapidos
+
+```bash
+/opsx:new       # Iniciar un nuevo cambio
+/opsx:continue  # Crear siguiente artefacto
+/opsx:ff        # Fast-forward: crear todos los artefactos de planificacion
+/opsx:apply     # Implementar tareas
+/opsx:verify    # Validar implementacion contra spec
+/opsx:archive   # Archivar cambio completado
+```
+
+Ver [`docs/openspec.md`](docs/openspec.md) para la guia completa del workflow OPSX.

@@ -53,3 +53,13 @@ Las skills se cargan desde `.agents/skills/` (configurado en `opencode.json`). S
 - Usar `"type": "module"` o no en `package.json` segun lo requiera el proyecto
 - Respeta el `tsconfig.base.json` raiz como fuente de verdad de TS
 - No duplicar `devDependencies` que ya estan en la raiz (TypeScript, etc.)
+
+## OpenSpec (OPSX)
+
+El desarrollo se guia con especificaciones via OpenSpec. Antes de escribir codigo, crear los artefactos correspondientes.
+
+**Flujo tipico:** `/opsx:new "feature"` → `/opsx:ff` → `/opsx:apply` → `/opsx:verify` → `/opsx:archive`
+
+**Comandos disponibles:** `/opsx:new`, `/opsx:continue`, `/opsx:ff`, `/opsx:apply`, `/opsx:verify`, `/opsx:archive`, `/opsx:sync`, `/opsx:explore`, `/opsx:bulk-archive`
+
+Los artefactos de cada cambio viven en `openspec/changes/<id>/`. Las specs principales en `openspec/specs/`. Ver [`docs/openspec.md`](docs/openspec.md).
